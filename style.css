@@ -1,0 +1,95 @@
+/* style.css */
+
+body {
+    background-color: #FADADD;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease;
+}
+
+#container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 40px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    z-index: 10;
+    /* This allows the box to fade out smoothly during the party */
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+#question {
+    color: #d63384;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Default Script Font */
+.script-font {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.8rem;
+}
+
+/* New Arial Font for specific sections */
+.arial-font {
+    font-family: Arial, sans-serif;
+    font-size: 1.4rem; 
+    font-weight: bold;
+}
+
+#image-container img {
+    max-width: 100%;
+    height: auto;
+    width: 320px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.8rem;
+    padding: 12px 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    transition: transform 0.2s;
+}
+
+button:hover { transform: scale(1.1); }
+
+#yes-button { background-color: #ff4d6d; color: white; }
+#no-button { background-color: #ffb3c1; color: white; }
+
+.party-icon {
+    position: fixed;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+    #container { 
+        padding: 20px; 
+        /* We use !important here to ensure the JS can still override it if needed */
+        box-shadow: none; 
+    }
+    .script-font { font-size: 1.8rem; }
+    .arial-font { font-size: 1.1rem; }
+}
